@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Indice de Fragilite Numerique | INR | Institut du Numérique Responsable</title>
+    <meta name="robots" content="index, follow" />
+	<meta name="description" content="Cet outil cartographique, développé par l’Institut du Numérique Responsable (INR), permet la visualisation d'indices de fragilité numérique territoire par territoire." />    
+  	<link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+    <div class="header header-carto">
+        <div><a href="https://indice.institutnr.org"><img src="medias/logo-inr.jpg" id="logo"/></a></div>
+        <div>
+            <span>Version Beta 2 - Novembre 2020&nbsp; | &nbsp;</span>
+            <a class="classique" href="mailto:fragilitenumerique@institutnr.org" target="_blank">fragilitenumerique@institutnr.org</a>
+            &nbsp; 
+            <br id="space_for_button">
+            <a class="button button-wayra button-border-thick button-text-upper button-size-s" href="https://twitter.com/institutnr" target="_blank">Tw</a>
+            <a class="button button-wayra button-border-thick button-text-upper button-size-s" href="https://linkedin.com/company/institutnr" target="_blank">In</a>
+        </div>
+    </div>
+    <h2>Cartographie De Fragilité</h2>
+    <form action="/action_page.php" class="filters">
+        <label for="regions" class="category">Region </label>
+        <select name="region" id="regions">
+            <option value="ALL">(All)</option>
+            <option value="AUVERGNE RHONE ALPES">AUVERGNE RHONE ALPES</option>
+            <option value="BOURGOGNE FRANCHE COMTE">BOURGOGNE FRANCHE COMTE</option>
+            <option value="BRETAGNE">BRETAGNE</option>
+            <option value="CENTRE VAL DE LOIRE">CENTRE VAL DE LOIRE</option>
+            <option value="CORSE">CORSE</option>
+            <option value="GRAND EST">GRAND EST</option>
+            <option value="HAUTS DE FRANCE">HAUTS DE FRANCE</option>
+            <option value="ILE DE FRANCE">ILE DE FRANCE</option>
+            <option value="LA REUNION">LA REUNION</option>
+            <option value="MARTINIQUE">MARTINIQUE</option>
+            <option value="NORMANDIE">NORMANDIE</option>
+            <option value="NOUVELLE AQUITAINE">NOUVELLE AQUITAINE</option>
+            <option value="OCCITANIE">OCCITANIE</option>
+            <option value="PAYS DE LA LOIRE">PAYS DE LA LOIRE</option>
+            <option value="PROVENCE ALPES COTE D AUR">PROVENCE ALPES COTE D AUR</option>
+        </select>
+        <label for="departements" class="category">Departement </label>
+        <select name="departement" id="departements">
+            <option value="ALL">(All)</option>
+            <option value="AIN">AIN</option>
+            <option value="AISNE">AISNE</option>
+            <option value="ALLIER">ALLIER</option>
+            <option value="ALPES DE HAUTE PROVENCE">ALPES DE HAUTE PROVENCE</option>
+            <option value="ALPES MARITIMES">ALPES MARITIMES</option>
+            <option value="ARDECHE">ARDECHE</option>
+            <option value="ARDENNES">ARDENNES</option>
+            <option value="ARIEGE">ARIEGE</option>
+            <option value="AUBE">AUBE</option>
+            <option value="AVEYRON">AVEYRON</option>
+            <option value="BAS RHIN">BAS RHIN</option>
+            <option value="BOUCHES DU RHONE">BOUCHES DU RHONE</option>
+            <option value="CALVADOS">CALVADOS</option>
+            <option value="CANTAL">CANTAL</option>
+            <option value="CHARENTE">CHARENTE</option>
+            <option value="CHARENTE MARITIME">CHARENTE MARITIME</option>
+            <option value="CHER">CHER</option>
+            <option value="CORREZE">CORREZE</option>
+            <option value="CORSE DU SUD">CORSE DU SUD</option>
+            <option value="COTE D OR">COTE D OR</option>
+            <option value="COTES D ARMOR">COTES D ARMOR</option>
+            <option value="CREUSE">CREUSE</option>
+            <option value="DEUX SEVRES">DEUX SEVRES</option>
+            <option value="DORDOGNE">DORDOGNE</option>
+            <option value="DOUBS">DOUBS</option>
+            <option value="DROME">DROME</option>
+            <option value="ESSONNE">ESSONNE</option>
+            <option value="EURE">EURE</option>
+            <option value="EURE ET LOIR">EURE ET LOIR</option>
+            <option value="FINISTERE">FINISTERE</option>
+            <option value="GARD">GARD</option>
+            <option value="GERS">GERS</option>
+            <option value="GIRONDE">GIRONDE</option>
+            <option value="HAUT RHIN">HAUT RHIN</option>
+            <option value="HAUTE CORSE">HAUTE CORSE</option>
+            <option value="HAUTE GARONNE">HAUTE GARONNE</option>
+            <option value="HAUTE LOIRE">HAUTE LOIRE</option>
+
+        </select>
+        <label for="communes" class="category">Commune </label>
+        <select name="commune" id="communes">
+            <option value="ALL">(All)</option>
+            <option value="AUVERGNE RHONE ALPES">AUVERGNE RHONE ALPES</option>
+            <option value="BOURGOGNE FRANCHE COMTE">BOURGOGNE FRANCHE COMTE</option>
+            <option value="BRETAGNE">BRETAGNE</option>
+            <option value="CENTRE VAL DE LOIRE">CENTRE VAL DE LOIRE</option>
+            <option value="CORSE">CORSE</option>
+            <option value="GRAND EST">GRAND EST</option>
+            <option value="HAUTS DE FRANCE">HAUTS DE FRANCE</option>
+            <option value="ILE DE FRANCE">ILE DE FRANCE</option>
+            <option value="LA REUNION">LA REUNION</option>
+            <option value="MARTINIQUE">MARTINIQUE</option>
+            <option value="NORMANDIE">NORMANDIE</option>
+            <option value="NOUVELLE AQUITAINE">NOUVELLE AQUITAINE</option>
+            <option value="OCCITANIE">OCCITANIE</option>
+            <option value="PAYS DE LA LOIRE">PAYS DE LA LOIRE</option>
+            <option value="PROVENCE ALPES COTE D AUR">PROVENCE ALPES COTE D AUR</option>
+        </select>
+        <label for="intercommunalites" class="category">Intercommunalités </label>
+        <select name="intercommunalite" id="intercommunalites">
+            <option value="ALL">(All)</option>
+            <option value="AUVERGNE RHONE ALPES">AUVERGNE RHONE ALPES</option>
+            <option value="BOURGOGNE FRANCHE COMTE">BOURGOGNE FRANCHE COMTE</option>
+            <option value="BRETAGNE">BRETAGNE</option>
+            <option value="CENTRE VAL DE LOIRE">CENTRE VAL DE LOIRE</option>
+            <option value="CORSE">CORSE</option>
+            <option value="GRAND EST">GRAND EST</option>
+            <option value="HAUTS DE FRANCE">HAUTS DE FRANCE</option>
+            <option value="ILE DE FRANCE">ILE DE FRANCE</option>
+            <option value="LA REUNION">LA REUNION</option>
+            <option value="MARTINIQUE">MARTINIQUE</option>
+            <option value="NORMANDIE">NORMANDIE</option>
+            <option value="NOUVELLE AQUITAINE">NOUVELLE AQUITAINE</option>
+            <option value="OCCITANIE">OCCITANIE</option>
+            <option value="PAYS DE LA LOIRE">PAYS DE LA LOIRE</option>
+            <option value="PROVENCE ALPES COTE D AUR">PROVENCE ALPES COTE D AUR</option>
+        </select>
+        <br><br>
+        <label for="references" class="category">Choix de Point Référence  </label>
+        <select name="reference" id="references">
+            <option value="ALL">(All)</option>
+            <option value="AUVERGNE RHONE ALPES">AUVERGNE RHONE ALPES</option>
+            <option value="BOURGOGNE FRANCHE COMTE">BOURGOGNE FRANCHE COMTE</option>
+            <option value="BRETAGNE">BRETAGNE</option>
+            <option value="CENTRE VAL DE LOIRE">CENTRE VAL DE LOIRE</option>
+            <option value="CORSE">CORSE</option>
+            <option value="GRAND EST">GRAND EST</option>
+            <option value="HAUTS DE FRANCE">HAUTS DE FRANCE</option>
+            <option value="ILE DE FRANCE">ILE DE FRANCE</option>
+            <option value="LA REUNION">LA REUNION</option>
+            <option value="MARTINIQUE">MARTINIQUE</option>
+            <option value="NORMANDIE">NORMANDIE</option>
+            <option value="NOUVELLE AQUITAINE">NOUVELLE AQUITAINE</option>
+            <option value="OCCITANIE">OCCITANIE</option>
+            <option value="PAYS DE LA LOIRE">PAYS DE LA LOIRE</option>
+            <option value="PROVENCE ALPES COTE D AUR">PROVENCE ALPES COTE D AUR</option>
+        </select>
+        <input class="button button-wayra button-border-thick button-text-upper button-size-s button-send" type="submit" value="Soumettre" id="submit-button">
+    </form>
+
+    <div class="wrapper">
+        <div class="scroller">
+            <div id="table-content">
+                <table class="table" id="main-table">
+                    <thead>
+                        <tr>
+                            <th class="sticky-col-1 row-fixed-height">Nom Com</th>
+                            <th class="sticky-col-2 row-fixed-height">Code Iris</th>
+                            <th class="sticky-col-3 row-fixed-height">Nom Iris</th>
+                            <th>Population</th>
+                            <th>SCORE GLOBAL</th>
+                            <th>ACCÈS AUX INTERFACES NUMERIQUES</th>
+                            <th>ACCESS A L'INFORMATION</th>
+                            <th>COMPETENCES ADMINISTATIVES</th>
+                            <th>COMPÉTENCES NUMÉRIQUES</th>
+                            <th>GLOBAL ACCES</th>
+                            <th>GLOBAL COMPETENCES</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rows-display">
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigator">
+        <button type="button" onclick="previousRows()" class="previous">&laquo; Précédent</button>
+        <input type="text" value="01 - 10" readonly class="row_number" id="row-index">
+        <button type="button" onclick="nextRows()" class="next">Suivant &raquo;</button>
+        <button type="button" onclick="openShare()" class="share">
+            <img src="medias/share.png" alt="share" />
+        </button>
+        <button onclick="" class="download" id="export">
+            <img src="medias/download.png" alt="download" />
+        </button>
+    </div>
+
+    <div class="form-popup" id="myForm">
+        <form action="" class="form-container">
+            <h1>Partager</h1>
+
+            <label><b>Lien</b></label>
+            <input type="text" value="https://indice.institutnr.org/cartographie-indicateurs-fragilite.html">
+            <br><br>
+            <a class="next" href="mailto:fragilitenumerique@institutnr.org?subject=Look at this website&body=Hi, I found this website and thought you might like it https://indice.institutnr.org/cartographie-indicateurs-fragilite.html" title="Email" target="_blank">Email</a>
+            <a class="next" href="https://twitter.com/share?url=https://indice.institutnr.org/cartographie-indicateurs-fragilite.html&amp;text=Share popup on &amp;hashtags=codepen" title="Twitter" target="_blank">Twitter</a>
+            <a class="next" href="https://www.facebook.com/sharer.php?u=https://indice.institutnr.org/cartographie-indicateurs-fragilite.html" title="Facebook" target="_blank">Facebook</a>
+            <br><br>
+            <button type="button" onclick="closeShare()">Fermer</button>
+        </form>
+    </div>
+
+    <div class="conteneur" id="indicator">
+        <h2>Les Quatre Indicateurs De Fragilité</h2>
+        <p>Les quatre indicateurs retenus permettent de créer une analyse globale s'appuyant sur l'accès d'une part (information, interfaces numériques) et sur les compétences d'autre part (utilisation d'une interface,compétences administratives).</p>
+        <div class="quatre-indicators">
+            <div class="un-indicator">
+                <img src="./medias/acces-info.png" class="conteneur-image">
+                <h3 style="text-align:center;">Accès à l'information</h3>
+            </div>
+            <div class="un-indicator">
+                <img src="./medias/interfaces.png" class="conteneur-image">
+                <h3 style="text-align:center;">Accès aux interfaces numériques</h3>
+            </div>
+            <div class="un-indicator">
+                <img src="./medias/usage.png" class="conteneur-image">
+                <h3 style="text-align:center;">Capacité d'usage des interfaces numériques</h3>
+            </div>
+            <div class="un-indicator">
+                <img src="./medias/administrative.png" class="conteneur-image">
+                <h3 style="text-align:center;">Compétences administratives</h3>
+            </div>
+        </div>
+    </div>
+    <div class="brands">
+        <img src="medias/logo1.jpg" alt="logo1"/>
+        <img src="medias/logo2.jpg" alt="logo2"/>
+        <img src="medias/logo3.jpg" alt="logo3" id="logo3"/>
+
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/table.js"></script>
+</body>
+<p class="footer">
+    Outil développé par : Greenades -  <a href="http://genial.univ-lorraine.fr/" target="_blank">Programme Erasmus Mundus GENIAL</a> Cohorte 1
+    <br>
+    Interdiction de reproduction - Outil en accès libre et gratuit - réservé à un usage non-commercial 
+    <br>
+    © 2020 - Greenades
+</p>
+</html>
