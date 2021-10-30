@@ -1,14 +1,3 @@
-adict = {1:'a', 2:'b', 3:'c', 4:'d', 5:'c'}
-print(adict)
-sleep(2)
-print(adict)
-sleep(2)
-print(adict)
-sleep(2)
-print(adict)
-
-
-
 # import sqlite3
 # import json
 
